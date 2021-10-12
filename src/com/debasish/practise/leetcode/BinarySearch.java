@@ -11,13 +11,20 @@ package com.debasish.practise.leetcode;
  * @author debasishsahoo
  */
 public class BinarySearch {
+
+    /* Binary search approach with O(log n) time complexity */
     public static int search(int[] nums, int target) {
-        for (int i = 0; i < nums.length; i++) {
-            System.out.println(" nums" + "[" + i + "] : " + nums[i]);
-            if (nums[i] == target)
-                return i;
+        int index = 0, left = 0, right = nums.length - 1;
+        while (left <= right) {
+            index = left + (right - left) / 2;
+            System.out.println(" nums" + "[" + index + "] : " + nums[index]);
+            if (target == nums[index])
+                return index;
+            if (target > nums[index])
+                left = index + 1;
+            if (target < nums[index])
+                right = index - 1;
         }
-        System.out.println("target : " + target);
         return -1;
     }
 
