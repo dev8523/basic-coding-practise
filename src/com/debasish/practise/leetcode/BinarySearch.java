@@ -14,7 +14,7 @@ public class BinarySearch {
 
     /* Binary search approach with O(log n) time complexity */
     public static int search(int[] nums, int target) {
-        int index = 0, left = 0, right = nums.length - 1;
+        int index, left = 0, right = nums.length - 1;
         while (left <= right) {
             index = left + (right - left) / 2;
             System.out.println(" nums" + "[" + index + "] : " + nums[index]);
