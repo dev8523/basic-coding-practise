@@ -12,6 +12,7 @@ public class FizzBuzz {
         findFizzBuzz(scanner.nextInt());
         System.out.println("\n:: Your Input to check for each number in the input ::");
         printFizzBuzzForEachNumInInput(scanner.nextInt());
+        scanner.close();
     }
 
     private static void findFizzBuzz(int input) {
