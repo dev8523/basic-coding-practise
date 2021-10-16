@@ -42,7 +42,7 @@ public class TwoSum {
             }
             visitedNumbers.put(numbers[i], i);
         }
-        throw new Exception("404 Not Found");
+        throw new Exception("Target is not present in the input array");
     }
 
     /**
@@ -61,7 +61,7 @@ public class TwoSum {
                 }
             }
         }
-        throw new Exception("404 Not Found");
+        throw new Exception("Target is not present in the input array");
     }
 
 }
