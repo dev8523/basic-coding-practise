@@ -23,7 +23,7 @@ public class ConvertIntegerToRomanNumeral {
         String[] hundreds = {"", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"}; // "", 100, 200, 300, ..., 900
         String[] thousands = {"", "M", "MM", "MMM"}; // "", 1000, 2000, 3000, 4000
 
-        if (num < 4000)
+        if (num > 0 && num < 4000)
             return thousands[num / 1000] +
                     hundreds[(num % 1000) / 100] +
                     tens[(num % 100) / 10] +
