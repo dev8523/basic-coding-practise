@@ -25,7 +25,9 @@ public class ConvertRomanNumeralToIntegerValue {
 
         int result = 0;
         for (int i = 0; i < romanInputString.length(); i++) {
-            if (i > 0 && romanWithIntValueMap.get(romanInputString.charAt(i)) > romanWithIntValueMap.get(romanInputString.charAt(i - 1))) { // This wil check if the previous number that we found is less than the current number then subtract the number from the current no.
+            /* Check if the previous number that we found is less than the current number then subtract the number from the current number
+            else add the numbers to the result. */
+            if (i > 0 && romanWithIntValueMap.get(romanInputString.charAt(i)) > romanWithIntValueMap.get(romanInputString.charAt(i - 1))) {
                 result += romanWithIntValueMap.get(romanInputString.charAt(i)) - 2 * romanWithIntValueMap.get(romanInputString.charAt(i - 1));
             } else {
                 result += romanWithIntValueMap.get(romanInputString.charAt(i));
