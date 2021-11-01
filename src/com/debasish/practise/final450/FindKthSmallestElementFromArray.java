@@ -13,8 +13,9 @@ import java.util.Arrays;
 public class FindKthSmallestElementFromArray {
     public static void main(String[] args) {
         int[] arr = {7, 10, 4, 2, 20, 15};
-        int k = 3, l = arr[0], r = arr[arr.length - 1];
+        int k = 4, l = arr[0], r = arr[arr.length - 1];
         System.out.println("Kth smallest element : " + findKthSmallest(arr, l, r, k));
+        System.out.println("Kth largest element : " + findKthLargest(arr, l, r, k));
     }
 
     /**
@@ -24,7 +25,21 @@ public class FindKthSmallestElementFromArray {
      * @param l   the minimum element to set.
      * @param r   the maximum element to set.
      * @param k   the kth element to find.
-     * @return the minimum element.
+     * @return the kth largest element.
+     */
+    private static int findKthLargest(int[] arr, int l, int r, int k) {
+        Arrays.sort(arr);
+        return arr[k];
+    }
+
+    /**
+     * Sort the array then find the element by doing search number minus 1.
+     *
+     * @param arr the given input array
+     * @param l   the minimum element to set.
+     * @param r   the maximum element to set.
+     * @param k   the kth element to find.
+     * @return the kth minimum element.
      */
     private static int findKthSmallest(int[] arr, int l, int r, int k) {
         Arrays.sort(arr);
