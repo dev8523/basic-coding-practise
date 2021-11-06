@@ -1,6 +1,6 @@
 /**
- * WAP to show each word's occurrence in a given string/sentence.
- * Then show only the duplicate words and their occurrences.
+ * WAP to show each word's/char's occurrence in a given string.
+ * Then show only the duplicate words/chars and their occurrences.
  */
 package com.debasish.practise.dsa;
 
@@ -14,7 +14,12 @@ import java.util.Map;
 public class FindDuplicates {
     public static void main(String[] args) {
         String inputString = "I am am am learning java java am";
+        String inputCharString = "javaj2ee";
+        System.out.println("######################################");
         findDuplicateWord(inputString);
+        System.out.println("======================================");
+        findDuplicateCharacters(inputCharString);
+        System.out.println("**************************************");
     }
 
     /**
@@ -34,7 +39,7 @@ public class FindDuplicates {
      * 6.2.1: Print the duplicates. <br/>
      * <p>
      *
-     * @param string the input string/sentence.
+     * @param string the input string.
      */
     private static void findDuplicateWord(String string) {
         String[] arr = string.split(" "); // 1
@@ -52,6 +57,25 @@ public class FindDuplicates {
             String temp = keyIterator.next(); // 6.1
             if (map.get(temp) > 1) { // 6.2
                 System.out.println("The word '" + temp + "' appeared " + map.get(temp) + " no. of times."); //6.2.1
+            }
+        }
+    }
+
+    private static void findDuplicateCharacters(String inputCharString) {
+        Map<Character, Integer> map = new HashMap<>();
+        for (Character ch : inputCharString.toCharArray()) {
+            if (map.get(ch) != null) {
+                map.put(ch, map.get(ch) + 1);
+            } else {
+                map.put(ch, 1);
+            }
+        }
+        System.out.println("Showing each char's occurrence: \n" + map + "\n");
+        Iterator<Character> iterator = map.keySet().iterator();
+        while (iterator.hasNext()) {
+            char temp = iterator.next();
+            if (map.get(temp) > 1) {
+                System.out.println("The char '" + temp + "' appeared " + map.get(temp) + " no. of times.");
             }
         }
     }
