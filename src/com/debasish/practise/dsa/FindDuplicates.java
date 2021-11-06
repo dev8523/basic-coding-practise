@@ -71,9 +71,7 @@ public class FindDuplicates {
             }
         }
         System.out.println("Showing each char's occurrence: \n" + map + "\n");
-        Iterator<Character> iterator = map.keySet().iterator();
-        while (iterator.hasNext()) {
-            char temp = iterator.next();
+        for (char temp : map.keySet()) {
             if (map.get(temp) > 1) {
                 System.out.println("The char '" + temp + "' appeared " + map.get(temp) + " no. of times.");
             }
