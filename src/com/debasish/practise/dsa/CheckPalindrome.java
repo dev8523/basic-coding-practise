@@ -1,6 +1,7 @@
 /**
  * Given a string, check whether the string is Palindrome or not.
  * Palindrome: A string should match from both the sides (forward and backward).
+ * Remember the checks are case-sensitive.
  */
 package com.debasish.practise.dsa;
 
@@ -11,8 +12,8 @@ import java.util.stream.IntStream;
  */
 public class CheckPalindrome {
     public static void main(String[] args) {
-        String inputString = "KayaK";
-        if (isPalindromeUsingSimpleForEachLoop(inputString))
+        String inputString = "Kayak";
+        if (isPalindromeUsingStreamAPI(inputString))
             System.out.println("Palindrome");
         else
             System.out.println("Not Palindrome");
@@ -38,6 +39,12 @@ public class CheckPalindrome {
             }
         }
         return flag;
+    }
+
+    private static boolean isPalindromeUsingStreamAPI(String inputString) {
+        return IntStream
+                .range(0, inputString.length())
+                .noneMatch(i -> inputString.charAt(i) != inputString.charAt(inputString.length() - i - 1));
     }
 
 }
