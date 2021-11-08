@@ -4,27 +4,40 @@
  */
 package com.debasish.practise.dsa;
 
+import java.util.stream.IntStream;
+
 /**
  * @author debasishsahoo
  */
 public class CheckPalindrome {
     public static void main(String[] args) {
-        String inputString = "kayaK";
-        isPalindrome(inputString);
+        String inputString = "KayaK";
+        if (isPalindromeUsingSimpleForEachLoop(inputString))
+            System.out.println("Palindrome");
+        else
+            System.out.println("Not Palindrome");
     }
 
-    private static void isPalindrome(String inputString) {
+    private static boolean isPalindromeUsingSimpleForLoop(String inputString) {
         boolean flag = false;
         for (int i = 0; i < inputString.length(); i++) {
             if (inputString.charAt(i) == inputString.charAt(inputString.length() - i - 1)) {
                 flag = true;
             }
         }
-        if (flag) {
-            System.out.println("Palindrome");
-        } else {
-            System.out.println("Not Palindrome");
+        return flag;
+    }
+
+    private static boolean isPalindromeUsingSimpleForEachLoop(String inputString) {
+        boolean flag = false;
+        int counter = 0;
+        for (Character ch : inputString.toCharArray()) {
+            if (inputString.charAt(counter) == inputString.charAt(inputString.length() - counter - 1)) {
+                counter++;
+                flag = true;
+            }
         }
+        return flag;
     }
 
 }
