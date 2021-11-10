@@ -18,24 +18,5 @@ public class SinglyLinkedList {
         }
         System.out.println("Print the linkedlist: " + head);
     }
-
-    static SinglyLinkedListNode insertNodeAtHead(SinglyLinkedListNode llist, int data) {
-        SinglyLinkedListNode insertableNode = new SinglyLinkedListNode(data);
-        insertableNode.next = llist;
-        return insertableNode;
-    }
-
-    static SinglyLinkedListNode insertNodeAtTail(SinglyLinkedListNode head, int data) {
-        SinglyLinkedListNode insertableNode = new SinglyLinkedListNode(data);
-        if (head == null) {
-            head = insertableNode;
-        } else {
-            SinglyLinkedListNode current = head;
-            while (current.next != null) {
-                current = current.next;
-            }
-            current.next = insertableNode;
-        }
-        return head;
-    }
+    
 }
