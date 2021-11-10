@@ -1,15 +1,15 @@
 package com.debasish.practise.dsa.linkedlist;
 
-public class Node {
+public class SinglyLinkedListNode {
     int data;
-    Node next;
+    SinglyLinkedListNode next;
 
-    public Node(int data) {
+    public SinglyLinkedListNode(int data) {
         this.data = data;
         this.next = null;
     }
 
-    public Node(int data, Node next) {
+    public SinglyLinkedListNode(int data, SinglyLinkedListNode next) {
         this.data = data;
         this.next = next;
     }
