@@ -1,13 +1,12 @@
 package com.debasish.practise.dsa.linkedlist;
 
 public class SinglyLinkedList {
-    private final SinglyLinkedListNode head = null;
 
     public static void main(String[] args) {
         SinglyLinkedListNode linkedListNode = new SinglyLinkedListNode(3);
-        linkedListNode = insertNodeAtTail(linkedListNode, 9);
-        linkedListNode = insertNodeAtTail(linkedListNode, 2);
-        linkedListNode = insertNodeAtTail(linkedListNode, 5);
+        insertNodeAtTail(linkedListNode, 9);
+        insertNodeAtTail(linkedListNode, 2);
+        insertNodeAtTail(linkedListNode, 5);
         printLinkedList(linkedListNode);
 
         SinglyLinkedListNode linkedListNode1 = new SinglyLinkedListNode(10);
