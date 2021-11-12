@@ -1,5 +1,10 @@
 package com.debasish.practise.dsa.linkedlist;
 
+/**
+ * All methods are one linkedlist question. Problem Statement can be found on Hackerrank under Data Structures > LinkedList section.
+ *
+ * @author debasishsahoo
+ */
 public class SinglyLinkedList {
 
     public static void main(String[] args) {
@@ -63,15 +68,6 @@ public class SinglyLinkedList {
         return llist;
     }
 
-    /**
-     * Delete the node at a given position in a linked list and return a reference to the head node.
-     * The head is at position 0.
-     * The list may be empty after you delete the node. In that case, return a null value.
-     *
-     * @param llist
-     * @param position
-     * @return the linkedlist
-     */
     public static SinglyLinkedListNode deleteNode(SinglyLinkedListNode llist, int position) {
         if (position == 0)
             return llist;
