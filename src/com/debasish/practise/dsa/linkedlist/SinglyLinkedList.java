@@ -7,9 +7,11 @@ public class SinglyLinkedList {
         insertNodeAtTail(linkedListNode, 9);
         insertNodeAtTail(linkedListNode, 2);
         insertNodeAtTail(linkedListNode, 5);
+        deleteNode(linkedListNode, 1);
         insertNodeAtPosition(linkedListNode, 43, 2);
         printLinkedList(linkedListNode);
 
+        // We have to do pass by value in case of inserting a node at head.
         SinglyLinkedListNode linkedListNode1 = new SinglyLinkedListNode(10);
         linkedListNode1 = insertNodeAtHead(linkedListNode1, 40);
         linkedListNode1 = insertNodeAtHead(linkedListNode1, 60);
@@ -58,6 +60,29 @@ public class SinglyLinkedList {
         System.out.println("Node after which u want to insert: " + current.data);
         insertableNode.next = current.next;
         current.next = insertableNode;
+        return llist;
+    }
+
+    /**
+     * Delete the node at a given position in a linked list and return a reference to the head node.
+     * The head is at position 0.
+     * The list may be empty after you delete the node. In that case, return a null value.
+     *
+     * @param llist
+     * @param position
+     * @return the linkedlist
+     */
+    public static SinglyLinkedListNode deleteNode(SinglyLinkedListNode llist, int position) {
+        if (position == 0)
+            return llist;
+        SinglyLinkedListNode currentNode = llist;
+        int i = 1;
+        while (i < position) {
+            i++;
+            currentNode = currentNode.next;
+        }
+        System.out.println("Current Node to be deleted: " + currentNode.data);
+        currentNode.next = currentNode.next.next;
         return llist;
     }
 
