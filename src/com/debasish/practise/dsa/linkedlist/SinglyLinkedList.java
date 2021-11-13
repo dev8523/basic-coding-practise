@@ -29,7 +29,7 @@ public class SinglyLinkedList {
         insertNodeAtPosition(linkedListNode, 43, 2);
         printLinkedList(linkedListNode);
 
-        System.out.println("After comparing 2 linkedlists: " + compareLists(linkedListNode, linkedListNode2));
+        System.out.println("After comparing 2 linked lists: " + compareLists(linkedListNode, linkedListNode2));
     }
 
     static void printLinkedList(SinglyLinkedListNode head) {
