@@ -12,7 +12,7 @@ public class SinglyLinkedList {
         insertNodeAtTail(linkedListNode, 9);
         insertNodeAtTail(linkedListNode, 2);
         insertNodeAtTail(linkedListNode, 5);
-        deleteNode(linkedListNode, 1);
+        //deleteNode(linkedListNode, 1);
         insertNodeAtPosition(linkedListNode, 43, 2);
         printLinkedList(linkedListNode);
 
@@ -22,6 +22,14 @@ public class SinglyLinkedList {
         linkedListNode1 = insertNodeAtHead(linkedListNode1, 60);
         printLinkedList(linkedListNode1);
 
+        SinglyLinkedListNode linkedListNode2 = new SinglyLinkedListNode(3);
+        insertNodeAtTail(linkedListNode, 9);
+        insertNodeAtTail(linkedListNode, 2);
+        insertNodeAtTail(linkedListNode, 5);
+        insertNodeAtPosition(linkedListNode, 43, 2);
+        printLinkedList(linkedListNode);
+
+        System.out.println("After comparing 2 linkedlists: " + compareLists(linkedListNode, linkedListNode2));
     }
 
     static void printLinkedList(SinglyLinkedListNode head) {
@@ -82,4 +90,11 @@ public class SinglyLinkedList {
         return llist;
     }
 
+    static boolean compareLists(SinglyLinkedListNode head1, SinglyLinkedListNode head2) {
+        while (head1 != null && head2 != null && head1.data == head2.data) {
+            head1 = head1.next;
+            head2 = head2.next;
+        }
+        return head1 == null && head2 == null;
+    }
 }
