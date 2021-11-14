@@ -12,8 +12,8 @@ public class SinglyLinkedList {
         insertNodeAtTail(linkedListNode, 9);
         insertNodeAtTail(linkedListNode, 2);
         insertNodeAtTail(linkedListNode, 5);
-        //deleteNode(linkedListNode, 1);
-        insertNodeAtPosition(linkedListNode, 43, 2);
+        deleteNode(linkedListNode, 1);
+        insertNodeAtPosition(linkedListNode, 43, 1);
         printLinkedList(linkedListNode);
 
         // We have to do pass by value in case of inserting a node at head.
@@ -23,13 +23,21 @@ public class SinglyLinkedList {
         printLinkedList(linkedListNode1);
 
         SinglyLinkedListNode linkedListNode2 = new SinglyLinkedListNode(3);
-        insertNodeAtTail(linkedListNode, 9);
-        insertNodeAtTail(linkedListNode, 2);
-        insertNodeAtTail(linkedListNode, 5);
-        insertNodeAtPosition(linkedListNode, 43, 2);
-        printLinkedList(linkedListNode);
+        insertNodeAtTail(linkedListNode2, 9);
+        insertNodeAtTail(linkedListNode2, 2);
+        insertNodeAtTail(linkedListNode2, 5);
+        insertNodeAtPosition(linkedListNode2, 43, 2);
+        printLinkedList(linkedListNode2);
 
         System.out.println("After comparing 2 linked lists: " + compareLists(linkedListNode, linkedListNode2));
+
+        SinglyLinkedListNode linkedListNode3 = new SinglyLinkedListNode(3);
+        insertNodeAtTail(linkedListNode3, 9);
+        insertNodeAtTail(linkedListNode3, 2);
+        insertNodeAtTail(linkedListNode3, 5);
+        insertNodeAtPosition(linkedListNode3, 43, 1);
+        printLinkedList(linkedListNode3);
+        System.out.println("Get a specific node by iterating from last: " + getNode(linkedListNode3, 2));
     }
 
     static void printLinkedList(SinglyLinkedListNode head) {
@@ -96,5 +104,20 @@ public class SinglyLinkedList {
             head2 = head2.next;
         }
         return head1 == null && head2 == null;
+    }
+
+    public static int getNode(SinglyLinkedListNode llist, int positionFromTail) {
+        SinglyLinkedListNode currentNode = llist;
+        int lenOfCurrentNode = 0;
+        while (currentNode != null) {
+            currentNode = currentNode.next;
+            lenOfCurrentNode++;
+        }
+        int newPosition = lenOfCurrentNode - positionFromTail - 1;
+        currentNode = llist;
+        for (int i = 0; i < newPosition; i++) {
+            currentNode = currentNode.next;
+        }
+        return currentNode.data;
     }
 }
