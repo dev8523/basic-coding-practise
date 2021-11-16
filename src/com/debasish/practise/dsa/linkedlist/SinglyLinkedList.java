@@ -38,6 +38,7 @@ public class SinglyLinkedList {
         insertNodeAtPosition(linkedListNode3, 43, 1);
         printLinkedList(linkedListNode3);
         System.out.println("Get a specific node by iterating from last: " + getNode(linkedListNode3, 2));
+        reversePrint(linkedListNode3);
     }
 
     static void printLinkedList(SinglyLinkedListNode head) {
@@ -120,4 +121,12 @@ public class SinglyLinkedList {
         }
         return currentNode.data;
     }
+
+    public static void reversePrint(SinglyLinkedListNode llist) {
+        if (llist == null)
+            return;
+        reversePrint(llist.next);
+        System.out.print(llist.data + " ");
+    }
+
 }
