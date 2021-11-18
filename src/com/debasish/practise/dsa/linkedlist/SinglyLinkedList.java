@@ -39,6 +39,11 @@ public class SinglyLinkedList {
         printLinkedList(linkedListNode3);
         System.out.println("Get a specific node by iterating from last: " + getNode(linkedListNode3, 2));
         reversePrint(linkedListNode3);
+        System.out.println("\n########## MERGE 2 LIST ############");
+        printLinkedList(linkedListNode);
+        printLinkedList(linkedListNode1);
+        SinglyLinkedListNode mergeTwoListResult = mergeTwoLists(linkedListNode, linkedListNode1);
+        printLinkedList(mergeTwoListResult);
     }
 
     static void printLinkedList(SinglyLinkedListNode head) {
@@ -129,4 +134,17 @@ public class SinglyLinkedList {
         System.out.print(llist.data + " ");
     }
 
+    public static SinglyLinkedListNode mergeTwoLists(SinglyLinkedListNode l1, SinglyLinkedListNode l2) {
+        if (l1 == null)
+            return l2;
+        if (l2 == null)
+            return l1;
+        if (l1.data < l2.data) {
+            l1.next = mergeTwoLists(l1.next, l2);
+            return l1;
+        } else {
+            l2.next = mergeTwoLists(l1, l2.next);
+            return l2;
+        }
+    }
 }
