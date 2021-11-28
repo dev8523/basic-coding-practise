@@ -44,6 +44,7 @@ public class SinglyLinkedList {
         printLinkedList(linkedListNode1);
         SinglyLinkedListNode mergeTwoListResult = mergeTwoLists(linkedListNode, linkedListNode1);
         printLinkedList(mergeTwoListResult);
+        printLinkedList(middleNode(linkedListNode));
     }
 
     static void printLinkedList(SinglyLinkedListNode head) {
@@ -147,4 +148,19 @@ public class SinglyLinkedList {
             return l2;
         }
     }
+
+    public static SinglyLinkedListNode middleNode(SinglyLinkedListNode head) {
+        SinglyLinkedListNode x = head;
+        SinglyLinkedListNode y = head.next;
+        while (y != null) {
+            x = x.next;
+            y = y.next;
+            if (y != null) {
+                y = y.next;
+            }
+            System.out.println(":: x :: " + x.data);
+        }
+        return x;
+    }
+
 }
