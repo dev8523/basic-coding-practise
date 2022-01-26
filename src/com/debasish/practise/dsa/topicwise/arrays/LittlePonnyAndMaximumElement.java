@@ -1,6 +1,8 @@
 package com.debasish.practise.dsa.topicwise.arrays;
 
 /**
+ * @author debasishsahoo
+ * <p><p>
  * Problem Description
  * <p>
  * Little Ponny is given an array, A, of N integers. In a particular operation, he can set any element of the array equal to -1.
