@@ -26,15 +26,13 @@ package com.debasish.practise.dsa.topicwise.arrays;
  * Output 2: -1
  */
 public class LittlePonnyAndMaximumElement {
-    public class Solution {
-        public int solve(int[] A, int B) {
-            int cnt = 0, flag = 0;
-            for (int i = 0; i < A.length; i++) {
-                if (A[i] == B) flag = 1;
-                if (A[i] > B) cnt++;
-            }
-            if (flag == 1) return cnt;
-            return -1;
+    public int solve(int[] A, int B) {
+        int cnt = 0, flag = 0;
+        for (int i = 0; i < A.length; i++) {
+            if (A[i] == B) flag = 1;
+            if (A[i] > B) cnt++;
         }
+        if (flag == 1) return cnt;
+        return -1;
     }
 }
