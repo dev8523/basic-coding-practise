@@ -3,6 +3,10 @@ package com.debasish.practise.dsa.topicwise.arrays;
 import java.util.Scanner;
 
 /**
+ * @author debasishsahoo
+ * <p><p>
+ * Problem Description
+ * <p>
  * You are given an integer array A and an integer B. You have to print the same array after rotating it B times towards right.
  * <p>
  * NOTE: You can use extra memory.
