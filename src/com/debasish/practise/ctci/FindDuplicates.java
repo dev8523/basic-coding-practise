@@ -2,7 +2,7 @@
  * WAP to show each word's/char's occurrence in a given string.
  * Then show only the duplicate words/chars and their occurrences.
  */
-package com.debasish.practise.dsa;
+package com.debasish.practise.ctci;
 
 import java.util.HashMap;
 import java.util.Iterator;

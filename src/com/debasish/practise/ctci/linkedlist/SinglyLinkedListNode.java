@@ -1,4 +1,4 @@
-package com.debasish.practise.dsa.linkedlist;
+package com.debasish.practise.ctci.linkedlist;
 
 public class SinglyLinkedListNode {
     int data;

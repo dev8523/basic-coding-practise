@@ -8,7 +8,7 @@
  * Input: "Mr John Smith ", 13
  * Output: "Mr%20John%20Smith"
  */
-package com.debasish.practise.dsa;
+package com.debasish.practise.ctci;
 
 /**
  * @author debasishsahoo

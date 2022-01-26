@@ -3,7 +3,7 @@
  * Palindrome: A string should match from both the sides (forward and backward).
  * Remember the checks are case-sensitive.
  */
-package com.debasish.practise.dsa;
+package com.debasish.practise.ctci;
 
 import java.util.stream.IntStream;
 

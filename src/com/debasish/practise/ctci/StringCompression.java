@@ -4,7 +4,7 @@
  * If the "compressed" string would not become smaller than the original string, your method should return
  * the original string. You can assume the string has only uppercase and lowercase letters (a - z).
  */
-package com.debasish.practise.dsa;
+package com.debasish.practise.ctci;
 
 public class StringCompression {
     public static void main(String[] args) {
