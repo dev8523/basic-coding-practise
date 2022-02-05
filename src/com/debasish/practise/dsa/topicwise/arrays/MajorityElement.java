@@ -1,5 +1,7 @@
 package com.debasish.practise.dsa.topicwise.arrays;
 
+import java.util.Arrays;
+
 /**
  * @author debasishsahoo
  * <p>
@@ -29,4 +31,16 @@ public class MajorityElement {
         return 0;
     }
 
+    // Sorting approach in TC : O(N logN) and SC : O(1)
+    public int majorityElementBySorting(final int[] A) {
+        if (A.length == 1) return A[0];
+        Arrays.sort(A); // O(N log N)
+        int count = 1;
+        for (int i = 1; i < A.length; i++) {
+            if (A[i - 1] == A[i]) count++;
+            else count = 1;
+            if (count > (A.length / 2)) return A[i];
+        }
+        return count;
+    }
 }
