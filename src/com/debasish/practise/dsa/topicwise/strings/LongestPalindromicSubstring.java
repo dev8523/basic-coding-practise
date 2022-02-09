@@ -28,6 +28,9 @@ package com.debasish.practise.dsa.topicwise.strings;
  * We can see that longest palindromic substring is of length 7 and the string is "aaabaaa".
  */
 public class LongestPalindromicSubstring {
+    /**
+     * Expand around center and check
+     */
     static String checkPalindromeFromCenter(String str, int l, int r) {
         while (l >= 0 && r < str.length() && str.charAt(l) == str.charAt(r)) {
             l--; // go from center towards left
