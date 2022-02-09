@@ -1,5 +1,32 @@
 package com.debasish.practise.dsa.topicwise.strings;
 
+/**
+ * @author debasishsahoo
+ * <p>
+ * Problem Description
+ * <p>
+ * Given a string A of size N, find and return the longest palindromic substring's length in A.
+ * <p>
+ * Substring of string A is A[i...j] where 0 <= i <= j < len(A)
+ * <p>
+ * Palindrome string:
+ * A string which reads the same backwards. More formally, A is palindrome if reverse(A) = A.
+ * <p>
+ * Incase of conflict, return the substring which occurs first ( with the least starting index).
+ * <p>
+ * Example Input
+ * <p>
+ * A = "aaaabaaa"
+ * <p>
+ * <p>
+ * Example Output
+ * <p>
+ * 7
+ * <p>
+ * Example Explanation
+ * <p>
+ * We can see that longest palindromic substring is of length 7 and the string is "aaabaaa".
+ */
 public class LongestPalindromicSubstringLength {
     static int checkPalindromeFromCenter(String str, int l, int r) {
         int lengthOfPalindrome = 0;
