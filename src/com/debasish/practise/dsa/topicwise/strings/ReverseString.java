@@ -8,4 +8,22 @@ public class ReverseString {
         }
         return reverse;
     }
+
+    /**
+     * Using swap we are only swapping for n/2 times with an extra space.
+     */
+    public String usingSwap(String A) {
+        // using swap
+        char[] tmpArray = A.toCharArray();
+        int left = 0;
+        int right = A.length() - 1;
+        while (left <= right) {
+            char temp = tmpArray[left];
+            tmpArray[left] = tmpArray[right];
+            tmpArray[right] = temp;
+            left++;
+            right--;
+        }
+        return new String(tmpArray);
+    }
 }
