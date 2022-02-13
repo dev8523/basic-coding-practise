@@ -57,6 +57,7 @@ import java.util.Map;
  * Elements (2, 10) appears in both the array.
  */
 public class FindCommonElements {
+    // TC: O(N) and SC: O(N)
     public int[] solve(int[] A, int[] B) {
         // 1. First find the frequencyMap of A array.
         // 2. Check each element of B is present in the frequencyMap of A.
