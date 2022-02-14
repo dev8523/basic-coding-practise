@@ -40,6 +40,7 @@ import java.util.Set;
  * The array has sum 0.
  */
 public class SubArrayWith0Sum {
+    // TC: O(N) as iterating once over the array and SC: O(N) for hashset
     public int solve(int[] A) {
         // 1. Create prefix_sum and store in set.
         // 2. Check if set already contains the prefix_sum it means we return true else add to the set.
