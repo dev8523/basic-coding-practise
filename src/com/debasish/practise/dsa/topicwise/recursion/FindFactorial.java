@@ -15,4 +15,8 @@ package com.debasish.practise.dsa.topicwise.recursion;
  * Factorial of 1 = 1
  */
 public class FindFactorial {
+    public int solve(int A) {
+        if (A == 0 || A == 1) return 1;
+        return A * solve(A - 1);
+    }
 }
