@@ -23,7 +23,7 @@ public class PowerFunctionImpl {
         if (B == 0) return 1;
         long x = pow(A, B / 2, C);
         long ASquare = ((x % C) * (x % C)) % C;
-        if ((B & 1) != 0) {
+        if ((B & 1) != 0) { // If B is odd
             return (int) ((((long) A) * (ASquare) + C) % C);
         } else {
             return (int) (ASquare);
