@@ -1,4 +1,4 @@
-package com.debasish.practise.dsa.topicwise.bitmanipulation;
+package com.debasish.practise.dsa.topicwise.arrays;
 
 /**
  * @author debasishsahoo
