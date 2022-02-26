@@ -45,7 +45,8 @@ public class PreorderTraversal {
         Stack<TreeNode> stack = new Stack<>();
         stack.push(A);
         while (!stack.isEmpty()) {
-            TreeNode node = stack.pop();
+            TreeNode node = stack.peek();
+            stack.pop();
             list.add(node.val);
             if (node.right != null) stack.push(node.right);
             if (node.left != null) stack.push(node.left);
