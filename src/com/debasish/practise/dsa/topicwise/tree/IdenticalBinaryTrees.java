@@ -10,6 +10,7 @@ package com.debasish.practise.dsa.topicwise.tree;
  * Two binary trees are considered equal if they are structurally identical and the nodes have the same value.
  */
 public class IdenticalBinaryTrees {
+    // TC : O(N) and SC : O(H) {H - Height of the tree}
     public int isSameTree(TreeNode A, TreeNode B) {
         if (isIdentical(A, B)) return 1;
         else return 0;
