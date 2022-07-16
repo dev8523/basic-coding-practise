@@ -1,4 +1,4 @@
-package com.debasish.practise.dsa.topicwise.maths;
+package com.debasish.practise.dsa.topicwise.maths.primenumbers;
 
 /**
  * Problem Description
