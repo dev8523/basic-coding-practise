@@ -28,7 +28,7 @@ package com.debasish.practise.dsa.topicwise.maths.primenumbers;
  */
 public class CountOfDivisors {
     public int[] solve(int[] A) {
-        int[] spf = generateSpfArray(100000); // Given the
+        int[] spf = generateSpfArray(1000000); // Given the
         for (int i = 0; i < A.length; i++) {
             int count = 1;
             int temp = A[i];
