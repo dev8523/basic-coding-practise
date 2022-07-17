@@ -10,7 +10,6 @@ public class FactorialOfANumber {
     }
 
     private static int fact(int input) {
-        int result = 0;
         if (input == 1) {
             return input;
         }
