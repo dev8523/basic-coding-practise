@@ -10,9 +10,8 @@ public class FactorialOfANumber {
     }
 
     private static int fact(int input) {
-        if (input == 1) {
-            return input;
-        }
+        if (input < 0) throw new RuntimeException("Input too small!");
+        if (input == 0) return 1;
         return input * fact(input - 1);
     }
 }
