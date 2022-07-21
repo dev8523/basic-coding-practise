@@ -67,11 +67,8 @@ public class IsPrime {
         // E.g. 'Scanner' for input & 'System.out' for output
         Scanner sc = new Scanner(System.in);
         int N = sc.nextInt();
-        if (isPrime(N)) {
-            System.out.print("YES");
-        } else {
-            System.out.print("NO");
-        }
+        String res = isPrime(N) ? "YES" : "NO";
+        System.out.print(res);
     }
 
     // Check for number prime or not
