@@ -42,7 +42,16 @@ public class FindKthSmallestElementFromArray {
      * @return the kth minimum element.
      */
     private static int findKthSmallest(int[] arr, int l, int r, int k) {
-        Arrays.sort(arr);
-        return (arr[k - 1]);
+        /*Arrays.sort(arr);
+        return (arr[k - 1]);*/
+
+        /* OR */
+
+        return Arrays.stream(arr)
+                .sorted()
+                .limit(k)
+                .skip(k - 1)
+                .findFirst()
+                .getAsInt();
     }
 }
