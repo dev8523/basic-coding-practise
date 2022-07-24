@@ -14,8 +14,28 @@ public class FindKthSmallestElementFromArray {
     public static void main(String[] args) {
         int[] arr = {7, 10, 4, 2, 20, 15};
         int k = 4, l = arr[0], r = arr[arr.length - 1];
+        System.out.println("Kth smallest element without using inbuilt sorting method : " + findKthSmallestWithoutUsingInbuiltSorting(arr, l, r, k));
         System.out.println("Kth smallest element : " + findKthSmallest(arr, l, r, k));
         System.out.println("Kth largest element : " + findKthLargest(arr, l, r, k));
+    }
+
+    /**
+     * Do not use any inbuilt sorting method.
+     */
+    private static int findKthSmallestWithoutUsingInbuiltSorting(int[] arr, int l, int r, int k) {
+        for (int i = 0; i < k; i++) {
+            int minn = Integer.MAX_VALUE, idx = 0;
+            for (int j = i; j < arr.length; j++) {
+                if (arr[j] < minn) {
+                    minn = arr[j];
+                    idx = j;
+                }
+            }
+            int tmp = arr[i];
+            arr[i] = arr[idx];
+            arr[idx] = tmp;
+        }
+        return arr[k - 1];
     }
 
     /**
