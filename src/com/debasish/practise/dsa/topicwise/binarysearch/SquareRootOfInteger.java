@@ -62,8 +62,7 @@ public class SquareRootOfInteger {
         int low = 1, high = A, ans = 0;
         while (low <= high) {
             // int mid = (low + high) / 2;
-            int mid = low + (high - low) / 2; // Same condition as above, safer to use this as this will
-            // not give us overflow issue.
+            int mid = low + (high - low) / 2; // Same condition as above, safer to use this as this will not give us overflow issue.
             if (mid <= (A / mid)) {
                 ans = mid;
                 low = mid + 1;
