@@ -56,6 +56,7 @@ import java.util.Map;
  * Only possibility is choosing A[1] and A[2].
  */
 public class ShaggyAndDistances {
+    // Using hashing. TC: O(N), SC: O(N)
     public static int solve(int[] A) {
         if (A[0] == A[1]) return 1;
         int ans = A.length;
