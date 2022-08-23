@@ -67,10 +67,10 @@ public class SinglyLinkedList {
     /**
      * TC: O(1), SC: O(1)
      */
-    static Node insertNodeAtHead(Node llist, int data) {
-        Node insertableNode = new Node(data);
-        insertableNode.next = llist;
-        return insertableNode;
+    static Node insertNodeAtHead(Node head, int data) {
+        Node newNode = new Node(data);
+        newNode.next = head;
+        return newNode;
     }
 
     /**
@@ -93,8 +93,8 @@ public class SinglyLinkedList {
     /**
      * TC: O(position) or O(N) {worst TC}, SC: O(1)
      */
-    static Node insertNodeAtPosition(Node llist, int data, int position) {
-        Node current = llist;
+    static Node insertNodeAtPosition(Node head, int data, int position) {
+        Node current = head;
         Node insertableNode = new Node(data);
         int i = 1;
         while (i < position) {
@@ -104,16 +104,16 @@ public class SinglyLinkedList {
         System.out.println("Node after which u want to insert: " + current.data);
         insertableNode.next = current.next;
         current.next = insertableNode;
-        return llist;
+        return head;
     }
 
     /**
      * TC: O(N), SC: O(1)
      */
-    public static Node deleteNode(Node llist, int position) {
+    public static Node deleteNode(Node head, int position) {
         if (position == 0)
-            return llist;
-        Node currentNode = llist;
+            return head;
+        Node currentNode = head;
         int i = 1;
         while (i < position) {
             i++;
@@ -121,7 +121,7 @@ public class SinglyLinkedList {
         }
         System.out.println("Current Node to be deleted: " + currentNode.data);
         currentNode.next = currentNode.next.next;
-        return llist;
+        return head;
     }
 
     /**
@@ -175,15 +175,15 @@ public class SinglyLinkedList {
         return head1 == null && head2 == null;
     }
 
-    public static int getNode(Node llist, int positionFromTail) {
-        Node currentNode = llist;
+    public static int getNode(Node head, int positionFromTail) {
+        Node currentNode = head;
         int lenOfCurrentNode = 0;
         while (currentNode != null) {
             currentNode = currentNode.next;
             lenOfCurrentNode++;
         }
         int newPosition = lenOfCurrentNode - positionFromTail - 1;
-        currentNode = llist;
+        currentNode = head;
         for (int i = 0; i < newPosition; i++) {
             currentNode = currentNode.next;
         }
@@ -194,19 +194,19 @@ public class SinglyLinkedList {
      * Using Recursion.
      * TC: O(N), SC: O(N) {using recursion stack}
      */
-    public static void reversePrint(Node llist) {
-        if (llist == null)
+    public static void reversePrint(Node head) {
+        if (head == null)
             return;
-        reversePrint(llist.next);
-        System.out.print(llist.data + " ");
+        reversePrint(head.next);
+        System.out.print(head.data + " ");
     }
 
     /**
      * Without using Recursion, using iteration.
      * TC: O(N), SC: O(1)
      */
-    public static void reversePrintWithoutUsingRecursion(Node llist) {
-        Node curNode = llist;
+    public static void reversePrintWithoutUsingRecursion(Node head) {
+        Node curNode = head;
         Node prev = null;
         Node next = null;
 
