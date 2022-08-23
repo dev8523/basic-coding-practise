@@ -1,15 +1,15 @@
 package com.debasish.practise.ctci.linkedlist;
 
-public class SinglyLinkedListNode {
+public class Node {
     int data;
-    SinglyLinkedListNode next;
+    Node next;
 
-    public SinglyLinkedListNode(int data) {
+    public Node(int data) {
         this.data = data;
         this.next = null;
     }
 
-    public SinglyLinkedListNode(int data, SinglyLinkedListNode next) {
+    public Node(int data, Node next) {
         this.data = data;
         this.next = next;
     }
