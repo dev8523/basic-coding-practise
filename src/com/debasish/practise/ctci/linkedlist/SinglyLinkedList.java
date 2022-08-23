@@ -249,6 +249,9 @@ public class SinglyLinkedList {
     }
 
     /**
+     * Problem Description:
+     * Given a singly linked list head and an integer k, reverse the nodes of the list k at a time and return the modified linked list.
+     * <p>
      * TC: O(N), SC: O(N) {recursion stack}
      */
     public Node reverseKList(Node head, int k) {
