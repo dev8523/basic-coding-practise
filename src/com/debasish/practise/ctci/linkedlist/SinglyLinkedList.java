@@ -8,44 +8,44 @@ package com.debasish.practise.ctci.linkedlist;
 public class SinglyLinkedList {
 
     public static void main(String[] args) {
-        Node linkedListNode = new Node(3);
-        insertNodeAtTail(linkedListNode, 9);
-        insertNodeAtTail(linkedListNode, 2);
-        insertNodeAtTail(linkedListNode, 5);
-        deleteNode(linkedListNode, 1);
-        insertNodeAtPosition(linkedListNode, 43, 1);
-        printLinkedList(linkedListNode);
+        ListNode linkedListListNode = new ListNode(3);
+        insertNodeAtTail(linkedListListNode, 9);
+        insertNodeAtTail(linkedListListNode, 2);
+        insertNodeAtTail(linkedListListNode, 5);
+        deleteNode(linkedListListNode, 1);
+        insertNodeAtPosition(linkedListListNode, 43, 1);
+        printLinkedList(linkedListListNode);
 
         // We have to do pass by value in case of inserting a node at head.
-        Node linkedListNode1 = new Node(10);
-        linkedListNode1 = insertNodeAtHead(linkedListNode1, 40);
-        linkedListNode1 = insertNodeAtHead(linkedListNode1, 60);
-        printLinkedList(linkedListNode1);
+        ListNode linkedListListNode1 = new ListNode(10);
+        linkedListListNode1 = insertNodeAtHead(linkedListListNode1, 40);
+        linkedListListNode1 = insertNodeAtHead(linkedListListNode1, 60);
+        printLinkedList(linkedListListNode1);
 
-        Node linkedListNode2 = new Node(3);
-        insertNodeAtTail(linkedListNode2, 9);
-        insertNodeAtTail(linkedListNode2, 2);
-        insertNodeAtTail(linkedListNode2, 5);
-        insertNodeAtPosition(linkedListNode2, 43, 2);
-        printLinkedList(linkedListNode2);
+        ListNode linkedListListNode2 = new ListNode(3);
+        insertNodeAtTail(linkedListListNode2, 9);
+        insertNodeAtTail(linkedListListNode2, 2);
+        insertNodeAtTail(linkedListListNode2, 5);
+        insertNodeAtPosition(linkedListListNode2, 43, 2);
+        printLinkedList(linkedListListNode2);
 
-        System.out.println("After comparing 2 linked lists: " + compareLists(linkedListNode, linkedListNode2));
+        System.out.println("After comparing 2 linked lists: " + compareLists(linkedListListNode, linkedListListNode2));
 
-        Node linkedListNode3 = new Node(3);
-        insertNodeAtTail(linkedListNode3, 9);
-        insertNodeAtTail(linkedListNode3, 2);
-        insertNodeAtTail(linkedListNode3, 5);
-        insertNodeAtPosition(linkedListNode3, 43, 1);
-        printLinkedList(linkedListNode3);
-        System.out.println("Get a specific node by iterating from last: " + getNode(linkedListNode3, 2));
-        reversePrint(linkedListNode3);
-        reversePrintWithoutUsingRecursion(linkedListNode3);
+        ListNode linkedListListNode3 = new ListNode(3);
+        insertNodeAtTail(linkedListListNode3, 9);
+        insertNodeAtTail(linkedListListNode3, 2);
+        insertNodeAtTail(linkedListListNode3, 5);
+        insertNodeAtPosition(linkedListListNode3, 43, 1);
+        printLinkedList(linkedListListNode3);
+        System.out.println("Get a specific node by iterating from last: " + getNode(linkedListListNode3, 2));
+        reversePrint(linkedListListNode3);
+        reversePrintWithoutUsingRecursion(linkedListListNode3);
         System.out.println("\n########## MERGE 2 LIST ############");
-        printLinkedList(linkedListNode);
-        printLinkedList(linkedListNode1);
-        Node mergeTwoListResult = mergeTwoLists(linkedListNode, linkedListNode1);
+        printLinkedList(linkedListListNode);
+        printLinkedList(linkedListListNode1);
+        ListNode mergeTwoListResult = mergeTwoLists(linkedListListNode, linkedListListNode1);
         printLinkedList(mergeTwoListResult);
-        printLinkedList(middleNode(linkedListNode));
+        printLinkedList(middleNode(linkedListListNode));
     }
 
     /**
@@ -54,8 +54,8 @@ public class SinglyLinkedList {
      * Traverse LL in TC: O(N).
      * only taking a head ptr. So no extra space.
      */
-    static void printLinkedList(Node head) {
-        Node current = head;
+    static void printLinkedList(ListNode head) {
+        ListNode current = head;
         while (current != null) {
             System.out.print(current.data);
             System.out.print(" -> ");
@@ -67,25 +67,25 @@ public class SinglyLinkedList {
     /**
      * TC: O(1), SC: O(1)
      */
-    static Node insertNodeAtHead(Node head, int data) {
-        Node newNode = new Node(data);
-        newNode.next = head;
-        return newNode;
+    static ListNode insertNodeAtHead(ListNode head, int data) {
+        ListNode newListNode = new ListNode(data);
+        newListNode.next = head;
+        return newListNode;
     }
 
     /**
      * TC: O(N) {iterating unto last node}, SC: O(1)
      */
-    static Node insertNodeAtTail(Node head, int data) {
-        Node insertableNode = new Node(data);
+    static ListNode insertNodeAtTail(ListNode head, int data) {
+        ListNode insertableListNode = new ListNode(data);
         if (head == null) {
-            head = insertableNode;
+            head = insertableListNode;
         } else {
-            Node current = head;
+            ListNode current = head;
             while (current.next != null) {
                 current = current.next;
             }
-            current.next = insertableNode;
+            current.next = insertableListNode;
         }
         return head;
     }
@@ -93,34 +93,34 @@ public class SinglyLinkedList {
     /**
      * TC: O(position) or O(N) {worst TC}, SC: O(1)
      */
-    static Node insertNodeAtPosition(Node head, int data, int position) {
-        Node current = head;
-        Node insertableNode = new Node(data);
+    static ListNode insertNodeAtPosition(ListNode head, int data, int position) {
+        ListNode current = head;
+        ListNode insertableListNode = new ListNode(data);
         int i = 1;
         while (i < position) {
             i++;
             current = current.next;
         }
-        System.out.println("Node after which u want to insert: " + current.data);
-        insertableNode.next = current.next;
-        current.next = insertableNode;
+        System.out.println("ListNode after which u want to insert: " + current.data);
+        insertableListNode.next = current.next;
+        current.next = insertableListNode;
         return head;
     }
 
     /**
      * TC: O(N), SC: O(1)
      */
-    public static Node deleteNode(Node head, int position) {
+    public static ListNode deleteNode(ListNode head, int position) {
         if (position == 0)
             return head;
-        Node currentNode = head;
+        ListNode currentListNode = head;
         int i = 1;
         while (i < position) {
             i++;
-            currentNode = currentNode.next;
+            currentListNode = currentListNode.next;
         }
-        System.out.println("Current Node to be deleted: " + currentNode.data);
-        currentNode.next = currentNode.next.next;
+        System.out.println("Current ListNode to be deleted: " + currentListNode.data);
+        currentListNode.next = currentListNode.next.next;
         return head;
     }
 
@@ -137,7 +137,7 @@ public class SinglyLinkedList {
      * <p>
      * TC: O(N), SC: O(1)
      */
-    public static Node deleteNodeFromMid(Node head) {
+    public static ListNode deleteNodeFromMid(ListNode head) {
         // Base cases
         if (head == null)
             return null;
@@ -147,11 +147,11 @@ public class SinglyLinkedList {
 
         // Initialize slow and fast pointers
         // to reach middle of linked list
-        Node slow_ptr = head;
-        Node fast_ptr = head;
+        ListNode slow_ptr = head;
+        ListNode fast_ptr = head;
 
         // Find the middle and previous of middle.
-        Node prev = null;
+        ListNode prev = null;
 
         // To store previous of slow_ptr
         while (fast_ptr != null
@@ -167,7 +167,7 @@ public class SinglyLinkedList {
         return head;
     }
 
-    static boolean compareLists(Node head1, Node head2) {
+    static boolean compareLists(ListNode head1, ListNode head2) {
         while (head1 != null && head2 != null && head1.data == head2.data) {
             head1 = head1.next;
             head2 = head2.next;
@@ -175,26 +175,26 @@ public class SinglyLinkedList {
         return head1 == null && head2 == null;
     }
 
-    public static int getNode(Node head, int positionFromTail) {
-        Node currentNode = head;
+    public static int getNode(ListNode head, int positionFromTail) {
+        ListNode currentListNode = head;
         int lenOfCurrentNode = 0;
-        while (currentNode != null) {
-            currentNode = currentNode.next;
+        while (currentListNode != null) {
+            currentListNode = currentListNode.next;
             lenOfCurrentNode++;
         }
         int newPosition = lenOfCurrentNode - positionFromTail - 1;
-        currentNode = head;
+        currentListNode = head;
         for (int i = 0; i < newPosition; i++) {
-            currentNode = currentNode.next;
+            currentListNode = currentListNode.next;
         }
-        return currentNode.data;
+        return currentListNode.data;
     }
 
     /**
      * Using Recursion.
      * TC: O(N), SC: O(N) {using recursion stack}
      */
-    public static void reversePrint(Node head) {
+    public static void reversePrint(ListNode head) {
         if (head == null)
             return;
         reversePrint(head.next);
@@ -205,22 +205,22 @@ public class SinglyLinkedList {
      * Without using Recursion, using iteration.
      * TC: O(N), SC: O(1)
      */
-    public static void reversePrintWithoutUsingRecursion(Node head) {
-        Node curNode = head;
-        Node prev = null;
-        Node next = null;
+    public static void reversePrintWithoutUsingRecursion(ListNode head) {
+        ListNode curListNode = head;
+        ListNode prev = null;
+        ListNode next = null;
 
-        while (curNode != null) {
-            next = curNode.next;
-            curNode.next = prev;
-            prev = curNode;
-            curNode = next;
+        while (curListNode != null) {
+            next = curListNode.next;
+            curListNode.next = prev;
+            prev = curListNode;
+            curListNode = next;
         }
-        curNode = prev;
-        System.out.println(curNode);
+        curListNode = prev;
+        System.out.println(curListNode);
     }
 
-    public static Node mergeTwoLists(Node l1, Node l2) {
+    public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         if (l1 == null)
             return l2;
         if (l2 == null)
@@ -234,9 +234,9 @@ public class SinglyLinkedList {
         }
     }
 
-    public static Node middleNode(Node head) {
-        Node x = head;
-        Node y = head.next;
+    public static ListNode middleNode(ListNode head) {
+        ListNode x = head;
+        ListNode y = head.next;
         while (y != null) {
             x = x.next;
             y = y.next;
@@ -249,13 +249,58 @@ public class SinglyLinkedList {
     }
 
     /**
+     * Given a linked list of integers, find and return the middle element of the linked list.
+     * <p>
+     * NOTE: If there are N nodes in the linked list and N is even then return the (N/2 + 1)th element.
+     * <p>
+     * TC: O(N), SC: O(1)
+     */
+    private static int findMiddleNode(ListNode A) {
+        int n = findLengthOfLL(A);
+        // return n/2 node val.
+        return getNthIndexNode(A, n / 2);
+    }
+
+    /**
+     * Takes index as argument and return data at index.
+     * <p>
+     * TC: O(N), SC: O(1)
+     */
+    private static int getNthIndexNode(ListNode head, int idx) {
+        ListNode tmp = head;
+        int count = 0; /* index of ListNode we are
+                          currently looking at */
+        while (tmp != null) {
+            if (count == idx) return tmp.data;
+            count++;
+            tmp = tmp.next;
+        }
+        return 0;
+    }
+
+    /**
+     * Find length of a given linked-list.
+     * <p>
+     * TC: O(N), SC: O(1)
+     */
+    private static int findLengthOfLL(ListNode head) {
+        ListNode tmp = head;
+        int count = 0;
+        while (tmp != null) {
+            count++;
+            tmp = tmp.next;
+        }
+        return count;
+    }
+
+    /**
      * Problem Description:
      * Given a singly linked list head and an integer k, reverse the nodes of the list k at a time and return the modified linked list.
      * <p>
      * TC: O(N), SC: O(N) {recursion stack}
      */
-    public Node reverseKList(Node head, int k) {
-        Node curr = head;
+    public ListNode reverseKList(ListNode head, int k) {
+        ListNode curr = head;
         int count = 0;
         while (curr != null && count != k) { // find the k+1 node
             curr = curr.next;
@@ -266,7 +311,7 @@ public class SinglyLinkedList {
             // head - head-pointer to direct part,
             // curr - head-pointer to reversed part;
             while (count-- > 0) { // reverse current k-group:
-                Node tmp = head.next; // tmp - next head in direct part
+                ListNode tmp = head.next; // tmp - next head in direct part
                 head.next = curr; // preappending "direct" head to the reversed list
                 curr = head; // move head of reversed part to a new node
                 head = tmp; // move "direct" head to the next node in direct part
@@ -275,5 +320,4 @@ public class SinglyLinkedList {
         }
         return head;
     }
-
 }

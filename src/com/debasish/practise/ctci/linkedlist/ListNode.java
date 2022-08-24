@@ -1,17 +1,16 @@
 package com.debasish.practise.ctci.linkedlist;
 
-public class Node {
+public class ListNode {
     int data;
-    Node next;
+    ListNode next;
 
-    public Node(int data) {
+    public ListNode(int data) {
         this.data = data;
         this.next = null;
     }
 
-    public Node(int data, Node next) {
+    public ListNode(int data, ListNode next) {
         this.data = data;
         this.next = next;
     }
-
 }
