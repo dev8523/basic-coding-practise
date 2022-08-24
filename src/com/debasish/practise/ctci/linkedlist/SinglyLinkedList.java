@@ -254,11 +254,28 @@ public class SinglyLinkedList {
      * NOTE: If there are N nodes in the linked list and N is even then return the (N/2 + 1)th element.
      * <p>
      * TC: O(N), SC: O(1)
+     * <p>
+     * Doing here 2 iterations.
      */
-    private static int findMiddleNode(ListNode A) {
-        int n = findLengthOfLL(A);
+    private static int findMiddleNode(ListNode head) {
+        int n = findLengthOfLL(head);
         // return n/2 node val.
-        return getNthIndexNode(A, n / 2);
+        return getNthIndexNode(head, n / 2);
+    }
+
+    /**
+     * Find middle element using slow/fast pointer, we are reducing 1 extra iteration.
+     * Same TC: O(N), SC:O(1)
+     */
+    private static int findMiddleNodeUsingSlowAndFastPointers(ListNode head) {
+        if (head.next == null)
+            return head.data;
+        ListNode slow = head, fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow.data;
     }
 
     /**
