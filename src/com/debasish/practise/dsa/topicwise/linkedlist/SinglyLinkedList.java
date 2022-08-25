@@ -206,10 +206,10 @@ public class SinglyLinkedList {
      * TC: O(N), SC: O(1)
      */
     public static void reversePrintWithoutUsingRecursion(ListNode head) {
+        if (head == null) return;
         ListNode curListNode = head;
         ListNode prev = null;
         ListNode next = null;
-
         while (curListNode != null) {
             next = curListNode.next;
             curListNode.next = prev;
