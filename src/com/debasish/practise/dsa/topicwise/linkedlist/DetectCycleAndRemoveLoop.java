@@ -82,4 +82,33 @@ public class DetectCycleAndRemoveLoop {
         fast.next = null;
         return head;
     }
+
+    /**
+     * Given a linked list, return the node where the cycle begins. If there is no cycle, return null.
+     * <p>
+     * Try solving it using constant additional space.
+     * <p>
+     * Using FLOYD DETECTION ALGO (fast and slow pointers), detect if there is a loop in the linked list.
+     * <p>
+     * TC: O(N)
+     * Auxiliary SC: As only two pointers are used therefore constant space complexity.
+     */
+    public ListNode detectCycle(ListNode head) {
+        if (head.next == null) return head;
+        ListNode slow = head, fast = head; // For ex: If slow is V, then fast will be 2V.
+        while (slow != null
+                && fast != null
+                && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) break;
+        }
+        if (slow != fast) return null; // if no loop exists, return;
+        slow = head; // reset slow pointer to head and traverse again
+        while (slow.next != fast.next) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+        return slow.next; // Node where the cycle begins.
+    }
 }
