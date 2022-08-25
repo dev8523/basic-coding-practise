@@ -1,4 +1,4 @@
-package com.debasish.practise.ctci.linkedlist;
+package com.debasish.practise.dsa.topicwise.linkedlist;
 
 public class ListNode {
     int data;

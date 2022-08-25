@@ -1,4 +1,4 @@
-package com.debasish.practise.ctci.linkedlist;
+package com.debasish.practise.dsa.topicwise.linkedlist;
 
 /**
  * All methods are one linkedlist question. Problem Statement can be found on Hackerrank under Data Structures > LinkedList section.
