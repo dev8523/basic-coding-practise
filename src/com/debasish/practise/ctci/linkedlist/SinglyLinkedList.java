@@ -272,8 +272,8 @@ public class SinglyLinkedList {
             return head.data;
         ListNode slow = head, fast = head; // For ex: If slow is X, then fast will be 2X.
         while (fast != null && fast.next != null) {
-            slow = slow.next;
-            fast = fast.next.next;
+            slow = slow.next; // move 1 node at a time.
+            fast = fast.next.next; // move 2 nodes at a time.
         }
         return slow.data;
     }
