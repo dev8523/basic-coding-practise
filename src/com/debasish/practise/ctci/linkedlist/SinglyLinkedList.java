@@ -270,7 +270,7 @@ public class SinglyLinkedList {
     private static int findMiddleNodeUsingSlowAndFastPointers(ListNode head) {
         if (head.next == null)
             return head.data;
-        ListNode slow = head, fast = head;
+        ListNode slow = head, fast = head; // For ex: If slow is X, then fast will be 2X.
         while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
