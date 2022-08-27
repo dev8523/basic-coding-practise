@@ -43,9 +43,9 @@ public class LongestPalindromicSubstring {
         if (A.length() == 0) return "";
         String longestPalindromeSubString = A.substring(0, 1); // A single character itself is a palindrome.
         for (int i = 0; i < A.length(); i++) {
-            String p1 = checkPalindromeFromCenter(A, i, i); // if palindrome is having odd length, then there will be only 1 center. So passing i 2 times.
+            String p1 = checkPalindromeFromCenter(A, i, i); // if palindrome is having ODD length, then there will be only 1 center. So passing i 2 times.
             if (p1.length() > longestPalindromeSubString.length()) longestPalindromeSubString = p1;
-            String p2 = checkPalindromeFromCenter(A, i, i + 1); // if palindrome is having even length, then there will be 2 centers. So passing middle and middle + 1 as i.
+            String p2 = checkPalindromeFromCenter(A, i, i + 1); // if palindrome is having EVEN length, then there will be 2 centers. So passing middle and middle + 1 as i.
             if (p2.length() > longestPalindromeSubString.length()) longestPalindromeSubString = p2;
         }
         return longestPalindromeSubString;
