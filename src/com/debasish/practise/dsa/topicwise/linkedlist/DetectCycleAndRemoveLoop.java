@@ -94,21 +94,38 @@ public class DetectCycleAndRemoveLoop {
      * Auxiliary SC: As only two pointers are used therefore constant space complexity.
      */
     public ListNode detectCycle(ListNode head) {
-        if (head.next == null) return head;
-        ListNode slow = head, fast = head; // For ex: If slow is V, then fast will be 2V.
-        while (slow != null
-                && fast != null
-                && fast.next != null) {
+        // If list is empty or has
+        // only one node without loop
+        if (head == null || head.next == null)
+            return null;
+
+        ListNode slow = head, fast = head;
+
+        // Move slow and fast 1
+        // and 2 steps ahead
+        // respectively.
+        slow = slow.next;
+        fast = fast.next.next;
+
+        // Search for loop using
+        // slow and fast pointers
+        while (fast != null && fast.next != null) {
+            if (slow == fast) break;
             slow = slow.next;
             fast = fast.next.next;
-            if (slow == fast) break;
         }
-        if (slow != fast) return null; // if no loop exists, return;
-        slow = head; // reset slow pointer to head and traverse again
-        while (slow.next != fast.next) {
+
+        // If loop does not exist
+        if (slow != fast) return null;
+
+        // If loop exists. Start slow from
+        // head and fast from meeting point.
+        slow = head;
+        while (slow != fast) {
             slow = slow.next;
             fast = fast.next;
         }
-        return slow.next; // Node where the cycle begins.
+
+        return slow;
     }
 }
