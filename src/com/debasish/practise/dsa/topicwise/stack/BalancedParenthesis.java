@@ -29,10 +29,10 @@ import java.util.Stack;
  * <p>
  * 0
  */
-public class BalancedParantheses {
+public class BalancedParenthesis {
     public int solve(String A) {
         /**
-         * My approach: check if there is any open paranthesis then insert close paranthesis in stack.
+         * My approach: check if there is any open parenthesis then insert close parenthesis in stack.
          * and check popping one-by-one from the stack if they are not matching then return false.
          */
         Stack<Character> stack = new Stack<>();
