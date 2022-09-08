@@ -6,7 +6,7 @@ package com.debasish.practise.javabrains;
 /**
  * @author debasishsahoo
  */
-public class Stack {
+class Stack {
 
     private final int[] array;
     private final int capacity;
