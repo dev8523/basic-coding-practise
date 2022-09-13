@@ -54,6 +54,30 @@ import java.util.Queue;
  * Output denotes the first 3 integers that contains only digits 1, 2 and 3.
  */
 public class NIntegersContainingOnly1And2And3 {
+    /*
+    We know the initial three values will be 1, 2, and 3.
+
+    Now, the upcoming values will be by appending 1, 2, and 3 in each given value.
+
+    We will use a queue to store the elements in ascending order.
+
+    Pseudocode
+
+    Queue = Empty Queue
+
+    Q.insert(1)
+    Q.insert(2)
+    Q.insert(3)
+
+    count = 0
+    while(count < n):
+        num = Q.front;
+        Q.insert(string(num) + string(1) )
+        Q.insert(string(num) + string(2) )
+        Q.insert(string(num) + string(3) )
+        Q.pop()
+        count++;
+    */
     public ArrayList<Integer> solve(int A) {
         // Using Queue, TC: O(N), SC:O(N)
         Queue<Integer> q = new LinkedList<>();
