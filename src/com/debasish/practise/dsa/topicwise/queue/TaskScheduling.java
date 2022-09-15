@@ -63,6 +63,7 @@ import java.util.Deque;
  */
 public class TaskScheduling {
     /**
+     * Using {@link Deque}
      * TC: O(N^2)
      * SC: O(N)
      */
