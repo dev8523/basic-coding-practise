@@ -82,6 +82,9 @@ public class ConstructBinaryTreeFromInorderAndPostorder {
      * find the position of the root in the inorder array;
      * then locate the range for left subtree and right subtree and do recursion.
      * Use a HashMap to record the index of root in the inorder array.
+     * <p>
+     * TC: O(N)
+     * SC: O(N) using recursion stack and hashmap.
      */
     public TreeNode buildTreeUsingPostAndInOrder(int[] inorder, int[] postorder) {
         if (inorder == null || postorder == null || inorder.length != postorder.length) return null;
