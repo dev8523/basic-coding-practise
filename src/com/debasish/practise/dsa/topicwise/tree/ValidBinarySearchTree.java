@@ -72,8 +72,8 @@ public class ValidBinarySearchTree {
      */
     private static boolean isValidBST(TreeNode root, long min, long max) {
         if (root == null) return true;
-        if (root.val <= min || root.val >= max) return false;
-        return isValidBST(root.left, min, root.val) && isValidBST(root.right, max, root.val);
+        if (root.val < min || root.val > max) return false;
+        return isValidBST(root.left, min, root.val - 1) && isValidBST(root.right, root.val + 1, max);
     }
 
     public int isValidBST(TreeNode root) {
