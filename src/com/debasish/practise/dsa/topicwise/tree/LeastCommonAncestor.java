@@ -72,15 +72,15 @@ public class LeastCommonAncestor {
      * SC: O(H) - recursion stack max storing height of tree.
      */
     public int lca(TreeNode A, int B, int C) {
-        if (!find(A, B) || !find(A, C)) return -1;
+        if (!find(A, B) || !find(A, C)) return -1; // Try to find B in A or find C in A. if not found returns -1
         return lowestCommonAncestor(A, B, C).val;
     }
 
     private TreeNode lowestCommonAncestor(TreeNode A, int B, int C) {
         if (A == null) return null;
         if (A.val == B || A.val == C) return A;
-        TreeNode left = lowestCommonAncestor(A.left, B, C);
-        TreeNode right = lowestCommonAncestor(A.right, B, C);
+        TreeNode left = lowestCommonAncestor(A.left, B, C); // consider LST
+        TreeNode right = lowestCommonAncestor(A.right, B, C); // consider RST
         if (left != null && right != null) return A;
         return left != null ? left : right;
     }
@@ -88,8 +88,8 @@ public class LeastCommonAncestor {
     boolean find(TreeNode root, int val) {
         if (root == null) return false;
         if (root.val == val) return true;
-        boolean left = find(root.left, val);
-        boolean right = find(root.right, val);
+        boolean left = find(root.left, val); // finds in LST of the root node
+        boolean right = find(root.right, val); // finds in RST of the root node
         return left || right;
     }
 }
