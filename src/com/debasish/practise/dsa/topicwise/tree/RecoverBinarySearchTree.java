@@ -9,7 +9,7 @@ public class RecoverBinarySearchTree {
      * Check if something is fishy in the BST, then update the value of maxDip and minDip. => O(1)
      * <p>
      * TC: O(N)
-     * SC: O(H)
+     * SC: O(H), recursion stack storing height of a tree node size.
      */
     public int[] recoverTree(TreeNode A) {
         if (A == null) return new int[]{minDip, maxDip};
