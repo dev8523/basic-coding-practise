@@ -72,7 +72,7 @@ import java.util.Set;
 public class EqualTreePartition {
     /**
      * TC: O(N)
-     * SC: O(N)
+     * SC: O(H)
      */
     static int checkEqualPartition(TreeNode root) {
         int flag = 0;
@@ -84,6 +84,9 @@ public class EqualTreePartition {
         return 0;
     }
 
+    /**
+     * Doing POST ORDER traversal.
+     */
     static long dfs(TreeNode root, Set<Long> set, int flag) {
         if (root == null) return 0;
         long cur = root.val + dfs(root.left, set, flag) + dfs(root.right, set, flag);
