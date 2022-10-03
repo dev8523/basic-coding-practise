@@ -65,6 +65,8 @@ public class LongestSubstringWithoutRepeat {
      * Slide the index right toward N and if it is not present in the current HashSet, slide it further.
      * Till this point, we have the maximum non repeating substring length.
      * If a character is  found, which is present in the current window, remove the character from the current window and slide further.
+     * TC: O(N)
+     * SC: O(N)
      */
     public static int lengthOfLongestSubstring(String s) {
         int[] chars = new int[128];
