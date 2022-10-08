@@ -71,7 +71,8 @@ public class MagicianAndChocolates {
      * SC is O(N)
      */
     public int nChoc(int A, int[] B) {
-        // Max heap is a data structure that can help us in getting the bag with maximum chocolates at any moment
+        // Max heap is a data structure that can help us in
+        // getting the bag with maximum chocolates at any moment
         PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
 
         // Creating a max heap containing all elements of B
@@ -83,7 +84,8 @@ public class MagicianAndChocolates {
         long maxChocolate = 0;
         long mod = 1000000007;
 
-        // Get bag with maximum number of chocolates from the max heap (feed this to the kid i.e. store it in sum)
+        // Get bag with maximum number of chocolates from the max heap
+        // (feed this to the kid i.e. store it in sum)
         while (A-- > 0) {
             int temp = pq.poll(); // poll function is used to fetch & remove max element from max heap
             maxChocolate += (temp) % mod;
