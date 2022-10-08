@@ -73,17 +73,17 @@ public class ConnectRopesWithMinimumCost {
      * SC: O(N) - N is no of ropes.
      */
     public int solve(int[] A) {
-        PriorityQueue<Integer> minheap = new PriorityQueue<>();
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>();
         for (int n : A) {
-            minheap.add(n); // Push all elements into the heap.
+            minHeap.add(n); // Push all elements into the heap.
         }
         int cost = 0;
-        while (minheap.size() >= 2) {
-            int first = minheap.poll(); // fetch 1st element and remove from heap.
-            int second = minheap.poll(); // fetch 2nd element and remove from heap.
+        while (minHeap.size() >= 2) {
+            int first = minHeap.poll(); // fetch 1st element and remove from heap.
+            int second = minHeap.poll(); // fetch 2nd element and remove from heap.
             int sum = first + second;
             cost = cost + sum;
-            minheap.add(sum);
+            minHeap.add(sum);
         }
         return cost;
     }
