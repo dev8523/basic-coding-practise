@@ -64,6 +64,11 @@ import java.util.PriorityQueue;
  *  After sorting, the array becomes [1, 2, 10, 17, 21, 95].
  */
 public class KPlacesApart {
+    /**
+     * Using min heap
+     * TC: O(NlogN)
+     * SC: O(N)
+     */
     public int[] solve(int[] A, int B) {
         int n = A.length;
         int[] ans = new int[n];
