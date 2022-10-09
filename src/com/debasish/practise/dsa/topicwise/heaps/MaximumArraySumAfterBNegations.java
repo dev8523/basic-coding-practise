@@ -69,7 +69,7 @@ public class MaximumArraySumAfterBNegations {
 
         // Insert all elements into min heap.
         for (Integer integer : A) {
-            minHeap.offer(integer);
+            minHeap.offer(integer); // offer() method is used to insert a particular element into the Priority Queue
         }
 
         // Looping B times
