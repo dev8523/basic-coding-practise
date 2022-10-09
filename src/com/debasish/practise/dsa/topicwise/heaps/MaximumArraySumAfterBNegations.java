@@ -65,6 +65,8 @@ public class MaximumArraySumAfterBNegations {
      */
     public int solve(ArrayList<Integer> A, int B) {
         int sum = 0;
+        // Min heap is a data structure that can help us in
+        // getting the bag with minimum chocolates at any moment/iteration.
         PriorityQueue<Integer> minHeap = new PriorityQueue<>();
 
         // Insert all elements into min heap.
