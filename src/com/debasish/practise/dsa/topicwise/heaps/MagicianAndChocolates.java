@@ -73,6 +73,9 @@ public class MagicianAndChocolates {
     public int nChoc(int A, int[] B) {
         // Max heap is a data structure that can help us in
         // getting the bag with maximum chocolates at any moment
+
+        // Sorting in reverse order would sort it in descending order. So that we
+        // have the max element on top of the max heap.
         PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
 
         // Creating a max heap containing all elements of B
