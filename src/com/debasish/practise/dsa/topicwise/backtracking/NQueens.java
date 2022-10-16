@@ -68,10 +68,13 @@ import java.util.*;
  * There exist only one distinct solutions to the 1-queens puzzle:
  */
 public class NQueens {
-    public ArrayList<ArrayList<String>> solveNQueens(int n) {
+    private Set<Integer> colSet = new HashSet<>();
+    private Set<Integer> leftDiagSet = new HashSet<>();
+    private Set<Integer> rightDiagSet = new HashSet<>();
+    public ArrayList<ArrayList<String>> solveNQueens(int A) {
         if (A == 2 || A == 3) return new ArrayList<>();
         ArrayList<ArrayList<String>> result = new ArrayList<>();
-        dfs(result, new ArrayList<>(), 0, n);
+        dfs(result, new ArrayList<>(), 0, A);
         return result;
     }
 
@@ -97,10 +100,6 @@ public class NQueens {
             result.add(tempList);
             return;
         }
-
-        Set<Integer> colSet = new HashSet<>();
-        Set<Integer> leftDiagSet = new HashSet<>();
-        Set<Integer> rightDiagSet = new HashSet<>();
 
         for (int col = 0; col < n; col++) {
             if (colSet.contains(col) || leftDiagSet.contains(row + col) || rightDiagSet.contains(row - col))
