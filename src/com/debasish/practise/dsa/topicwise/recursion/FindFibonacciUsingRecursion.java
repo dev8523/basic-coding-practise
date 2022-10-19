@@ -17,6 +17,25 @@ package com.debasish.practise.dsa.topicwise.recursion;
  * Given that F0 = 0 and F1 = 1.
  */
 public class FindFibonacciUsingRecursion {
+    /**
+     * TC: O(N) - using memoization in DP.
+     * SC: O(N) - recursion stack space
+     */
+    public static int findAthFibonacciUsingMemoization(int A) {
+        int[] fib = new int[A + 1]; //  fib[i] denotes the i'th fibonacci number
+        fib[0] = 0;
+        fib[1] = 1;
+        for (int i = 2; i <= A; i++) {
+            fib[i] = fib[i - 1] + fib[i - 2];
+        }
+        return fib[A];
+    }
+
+    /**
+     * Using simple recursion.
+     * TC: O(2^N)
+     * SC: O(N) - recursion stack space
+     */
     public int findAthFibonacci(int A) {
         if (A <= 1) return A;
         return findAthFibonacci(A - 1) + findAthFibonacci(A - 2);
