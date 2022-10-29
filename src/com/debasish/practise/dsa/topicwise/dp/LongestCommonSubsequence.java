@@ -3,54 +3,54 @@ package com.debasish.practise.dsa.topicwise.dp;
 /**
  * Problem Description
  * Given two strings A and B. Find the longest common subsequence ( A sequence which does not need to be contiguous), which is common in both the strings.
- *
+ * <p>
  * You need to return the length of such longest common subsequence.
- *
- *
- *
+ * <p>
+ * <p>
+ * <p>
  * Problem Constraints
  * 1 <= Length of A, B <= 1005
- *
- *
- *
+ * <p>
+ * <p>
+ * <p>
  * Input Format
  * First argument is a string A.
  * Second argument is a string B.
- *
- *
- *
+ * <p>
+ * <p>
+ * <p>
  * Output Format
  * Return an integer denoting the length of the longest common subsequence.
- *
- *
- *
+ * <p>
+ * <p>
+ * <p>
  * Example Input
  * Input 1:
- *
- *  A = "abbcdgf"
- *  B = "bbadcgf"
+ * <p>
+ * A = "abbcdgf"
+ * B = "bbadcgf"
  * Input 2:
- *
- *  A = "aaaaaa"
- *  B = "ababab"
- *
- *
+ * <p>
+ * A = "aaaaaa"
+ * B = "ababab"
+ * <p>
+ * <p>
  * Example Output
  * Output 1:
- *
- *  5
+ * <p>
+ * 5
  * Output 2:
- *
- *  3
- *
- *
+ * <p>
+ * 3
+ * <p>
+ * <p>
  * Example Explanation
  * Explanation 1:
- *
- *  The longest common subsequence is "bbcgf", which has a length of 5.
+ * <p>
+ * The longest common subsequence is "bbcgf", which has a length of 5.
  * Explanation 2:
- *
- *  The longest common subsequence is "aaa", which has a length of 3.
+ * <p>
+ * The longest common subsequence is "aaa", which has a length of 3.
  */
 public class LongestCommonSubsequence {
     /**
@@ -89,18 +89,21 @@ public class LongestCommonSubsequence {
      */
     static class LCSUsingBottomUp {
         public int solve(String A, String B) {
-            int[][] dp = new int[A.length() + 1][B.length() + 1];
-
-            for (int i = 1; i <= A.length(); i++) {
-                for (int j = 1; j <= B.length(); j++) {
-                    if (A.charAt(i - 1) == B.charAt(j - 1)) {
-                        dp[i][j] = 1 + dp[i - 1][j - 1];
-                    } else {
+            int m = A.length(), n = B.length();
+            int[][] dp = new int[m + 1][n + 1];
+            int i, j;
+            for (i = 0; i <= m; i++) {
+                for (j = 0; j <= n; j++) {
+                    //Base condition
+                    if (i == 0 || j == 0)
+                        dp[i][j] = 0;
+                    else if (A.charAt(i - 1) == B.charAt(j - 1))
+                        dp[i][j] = dp[i - 1][j - 1] + 1;
+                    else
                         dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
-                    }
                 }
             }
-            return dp[A.length()][B.length()];
+            return dp[m][n];
         }
     }
 
