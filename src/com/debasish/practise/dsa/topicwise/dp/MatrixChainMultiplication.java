@@ -67,7 +67,7 @@ public class MatrixChainMultiplication {
      * TC: O(n^3)
      * SC: O(n^2) for dp array + recursion stack space (2n = max width of recursion tree)
      */
-    public int solve(int[] A) {
+    public int solveUsingMemoization(int[] A) {
         int n = A.length;
         int[][] dp = new int[n][n];
         for (int[] row : dp)
